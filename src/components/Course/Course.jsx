@@ -4,11 +4,13 @@ import { useState } from "react";
 import Cart from "../Cart/Cart";
 import { FaBookmark, FaDollarSign } from "react-icons/fa";
 
+
 const Course = () => {
   const [allCourse, setAllCourse] = useState([]);
   const [selectCourse, setAllSelectCourse] = useState([]);
   const [remaining, setReamainig] = useState(20);
   const [totalCredit, setTotalCreadit] = useState(0);
+  const [totatPrice, setTotalPRice] = useState();
   useEffect(() => {
     fetch("./course.json")
       .then((res) => res.json())
@@ -18,20 +20,24 @@ const Course = () => {
   const handelSelectorCourse = (course) => {
     const isExist = selectCourse.find((item) => item.id == course.id);
     let count = course.Credit;
+    let price = course.Price;
     if (isExist) {
       return alert("alredy enrolled");
     } else {
       selectCourse.forEach((item) => {
         count = count + item.Credit;
       });
+      selectCourse.forEach((item) => {
+        price = price + item.Price;
+      });
       const totalremaining = 20 - count;
       if (count > 20) {
-        return alert('your limit ses')
-      }
-      else {
+       alert('you limit is accros')
+
+      } else {
         setTotalCreadit(count);
         setReamainig(totalremaining);
-        //  console.log(count);
+        setTotalPRice(price);
         setAllSelectCourse([...selectCourse, course]);
       }
     }
@@ -55,12 +61,11 @@ const Course = () => {
 
               <div className="creditPrice">
                 <p>
-                  Price : <FaDollarSign />{course.Price}
+                  <FaDollarSign /> Price :{course.Price}
                 </p>
-                
+
                 <p>
-                  Credit : <FaBookmark></FaBookmark>
-                  {course.Credit}hr
+                  <FaBookmark></FaBookmark> Credit :{course.Credit}hr
                 </p>
               </div>
               <button
@@ -77,6 +82,7 @@ const Course = () => {
             selectCourse={selectCourse}
             remaining={remaining}
             totalCredit={totalCredit}
+            totatPrice={totatPrice}
           ></Cart>
         </div>
       </div>
