@@ -11,7 +11,7 @@ const Course = () => {
   const [totalCredit, setTotalCreadit] = useState(0);
   const [totatPrice, setTotalPRice] = useState();
   useEffect(() => {
-    fetch("./course.json")
+    fetch("course.json")
       .then((res) => res.json())
       .then((data) => setAllCourse(data));
   }, []);
