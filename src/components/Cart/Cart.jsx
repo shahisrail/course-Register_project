@@ -5,7 +5,8 @@ const Cart = ({ selectCourse, remaining, totalCredit, totatPrice }) => {
     <div>
       <h4 className="remaning">Credit Hour Remaining {remaining}</h4>
       <p className="border"></p>
-      {selectCourse.map((course,index) => (
+      <h3 className="credit">Course Name</h3>
+      {selectCourse.map((course, index) => (
         <li className="subj" key={course.id}>
           {`${index + 1}. ${course.subject}`}
         </li>

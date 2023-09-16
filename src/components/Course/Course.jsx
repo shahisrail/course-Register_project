@@ -22,7 +22,10 @@ const Course = () => {
     let count = course.Credit;
     let price = course.Price;
     if (isExist) {
-      return alert("alredy enrolled");
+      Swal.fire({
+        icon: "error",
+        title: "All ready you are Enrroled",
+      });
     } else {
       selectCourse.forEach((item) => {
         count = count + item.Credit;
@@ -32,7 +35,10 @@ const Course = () => {
       });
       const totalremaining = 20 - count;
       if (count > 20) {
-       alert('you limit is accros')
+      Swal.fire({
+        icon: "error",
+        title: "Your limit is Finish",
+      });
 
       } else {
         setTotalCreadit(count);
@@ -77,7 +83,7 @@ const Course = () => {
             </div>
           ))}
         </div>
-        <div className="cart">
+        <div className="cart min-h-[auto]">
           <Cart
             selectCourse={selectCourse}
             remaining={remaining}
@@ -91,3 +97,4 @@ const Course = () => {
 };
 
 export default Course;
+ 
