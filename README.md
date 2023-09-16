@@ -1,8 +1,9 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Course Registration
+### Discuss how you managed the state in your assignment project
 
-Currently, two official plugins are available:
+![photo(file:///C:/Users/88017/Pictures/Screenshot_64.png)]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+First, I created a Courses component and then declared a state inside it and then using the use effect I loaded the data in there and loaded the data and put my data in that state and then inside that I had all the states when needed. Either I've just passed it in that I've declared all the state in a cart component and I've passed it wherever it's needed.
+
+
