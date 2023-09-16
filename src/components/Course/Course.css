@@ -1,19 +1,19 @@
- body{
-        font-family: 'Montserrat', sans-serif;
-        background:url('https://i.imgur.com/jhek7SV.jpg') ,
-        linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
-        background-blend-mode: overlay;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed; 
-    } 
-.corse{
+body {
+  font-family: "Montserrat", sans-serif;
+  background: url("https://i.imgur.com/jhek7SV.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.corse {
   color: white;
 }
 
 .card {
-  width: 320px;  
-  height: 400px;
+  width: 300px;
+  height: 410px;
   border: 1px solid gray;
   border-radius: 10px;
   background-color: #fff;
@@ -22,11 +22,12 @@
   width: 300px;
   border: 1px solid gray;
   border-radius: 10px;
-  background-color: #A19FA1;
-  position: fixed; 
+  background-color: #a19fa1;
+
+  /* position: fixed; 
    top: 127px; 
-   left: 75%; 
-   margin-top: -15px;
+   left: 75%;  */
+  margin-top: -15px;
 }
 
 .photo {
@@ -36,16 +37,16 @@
 .creditPrice {
   display: flex;
   justify-content: space-evenly;
-  color: rgba(28, 27, 27, 0.60);
-font-weight: 500;
+  color: rgba(28, 27, 27, 0.6);
+  font-weight: 500;
 }
 .card-btn {
   color: white;
   width: 270px;
   height: 40px;
   border-radius: 8px;
-  border: 1px solid #2F80ED;
-  background: #2F80ED;
+  border: 1px solid #2f80ed;
+  background: #2f80ed;
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
@@ -57,6 +58,8 @@ font-weight: 500;
 
 .course-container {
   display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
   justify-content: space-between;
 }
 .card-container {
@@ -70,17 +73,17 @@ font-weight: 500;
   font-size: 20px;
   font-weight: 700;
 }
-.titale{
-  color: rgba(28, 27, 27, 0.60);
-font-size: 14px;
-font-weight: 400;
-line-height: 24px;
+.titale {
+  color: rgba(28, 27, 27, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
 }
-.border{
-  border: 1px solid rgba(28, 27, 27, 0.20);
-   width: 80%;
+.border {
+  border: 1px solid rgba(28, 27, 27, 0.2);
+  width: 80%;
   margin-left: 26px;
-   text-align: center;
+  text-align: center;
 }
 .remaning {
   color: #2f80ed;
@@ -90,14 +93,14 @@ line-height: 24px;
   font-weight: 700;
   line-height: 30px;
 }
-.credit{
+.credit {
   color: white;
 }
-.subj{
+.subj {
   color: black;
   font-weight: 700;
-  border: 2px solid #DDDCDD;
-  background-color: #DDDCDD;
+  border: 2px solid #dddcdd;
+  background-color: #dddcdd;
   border-radius: 10px;
   width: 80%;
   margin: 20px;
@@ -107,4 +110,40 @@ line-height: 24px;
   align-items: center;
   gap: 20px;
   line-height: 20px;
+}
+@media (max-width: 768px) {
+  .card-container {
+    width: auto;
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 0; /* Remove the negative margin for mobile */
+  }
+  .cart,
+  .photo {
+    width: auto; /* Allow the cart width to adjust dynamically */
+  }
+  .card {
+    width: auto;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card-container {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .cart {
+    width: 300px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: #a19fa1;
+    position: fixed;
+    top: 127px;
+    left: 75%;
+    margin-top: -15px;
+  }
 }
