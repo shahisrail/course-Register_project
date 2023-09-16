@@ -1,5 +1,3 @@
-
-
 # Course Registration
 ### Discuss how you managed the state in your assignment project
 

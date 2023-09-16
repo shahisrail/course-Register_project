@@ -4,7 +4,6 @@ import { useState } from "react";
 import Cart from "../Cart/Cart";
 import { FaBookmark, FaDollarSign } from "react-icons/fa";
 
-
 const Course = () => {
   const [allCourse, setAllCourse] = useState([]);
   const [selectCourse, setAllSelectCourse] = useState([]);
